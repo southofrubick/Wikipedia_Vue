@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3.0.2"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="stylesheet.css">
+    <title>Lektion_1</title>
+</head>
+<body >
+    <h1>Booklist</h1>
+
+    <div id="app">
+        <div id="desc">
+            <h3>{{ books[index].title }}</h3>
+            <p>
+                Book {{ index + 1 }}: <br>
+                <img :src="books[index].image" :alt="books[index].title"><br><b>
+                <div id="bookInfo">
+                    {{ books[index].author }}, </b> <a v-bind:href="books[index].url">Link to wiki</a><br>
+                    {{ books[index].releaseDate }}<br>
+                    <p id="bookDesc"></p>
+                </div>
+            </p>
+        </div>
+        <div class="clearfix">
+            <div>
+                <button @click="changeTitle">Change book</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
